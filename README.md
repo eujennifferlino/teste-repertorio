@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# <h1 align="center">Teste prático Repertório</h1>
+<p align="center">Aplicação web simples utilizando React que simula uma ferramenta de auxílio à redação de textos, com funcionalidades de adicionar parágrafos, salvar rascunhos e visualizar o texto completo.</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Ambiente de configuração
+Projeto desenvolvido com Vite [Veja a documentação oficial](https://vite.dev/guide/) para configurar o ambiente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tecnologias e bibliotecas
+* React: Biblioteca JavaScript para construir interfaces de usuário
+* Typescript: Ferramenta de construção e desenvolvimento front-end
+* Vite: Ferramenta de construção e desenvolvimento front-end
+* CSS: Estilização de componentes e layouts
+* React-Toastfy: Biblioteca para alertas modernos
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Campo de texto para digitação
+- Altura fixa do textarea
+- Tema dark no textarea
+- Adição de parágrafos via botão
+- Adição de parágrafos via tecla Enter
+- Validação de parágrafos vazios
+- ID único para cada parágrafo
+- Visualização em tempo real dos parágrafos
+- Sistema de Notificações personalizado
+- Layout adaptativo para mobile
+- Acessibilidade: Textos com bom contraste, Mensagens de feedback, Estrutura semântica e Navegação via teclado (Enter)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+
+## Deploy
+
+[Veja o projeto funcionando](https://teste-repertorio.vercel.app/)
+
+## Rodando localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/eujennifferlino/teste-repertorio
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Entre no diretório do projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+  cd teste-repertorio
 ```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm run dev
+```
+
+---
+
+## Autora
+✨ Feito por Jenniffer Lino!
+
+- <a href="https://www.linkedin.com/in/jennifferlinof/" target=”_blank”>LinkedIn</a>
+- [@byjennifferlino](https://www.instagram.com/byjennifferlino)
