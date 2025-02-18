@@ -42,6 +42,27 @@ const DraftEditor = () => {
     });
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleAddParagraph();
+    }
+  };
+
+  const handleReset = () => {
+    setParagraphs([]);
+    setCurrentParagraph('');
+    toast.info('✨ Rascunho limpo!', {
+      position: "top-right",
+      style: {
+        background: '#f0f9ff',
+        borderRadius: '10px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        color: '#333'
+      }
+    });
+  };
+
   const handleSaveDraft = () => {
     toast.success('📝 Rascunho salvo com sucesso!', {
       position: "top-right",
@@ -61,11 +82,15 @@ const DraftEditor = () => {
         <textarea
           value={currentParagraph}
           onChange={(e) => setCurrentParagraph(e.target.value)}
+          onKeyDown={handleKeyPress}
           placeholder="Digite seu parágrafo aqui..."
           rows={4}
         />
-        <button onClick={handleAddParagraph}>Adicionar Parágrafo</button>
-        <button onClick={handleSaveDraft}>Salvar Rascunho</button>
+        <div className="button-group">
+          <button onClick={handleAddParagraph}>Adicionar Parágrafo</button>
+          <button onClick={handleReset}>Limpar Tudo</button>
+          <button onClick={handleSaveDraft}>Salvar Rascunho</button>
+        </div>
       </div>
 
       <h2>Visualização do Texto</h2>
