@@ -12,14 +12,34 @@ const DraftEditor = () => {
   const [currentParagraph, setCurrentParagraph] = useState('');
 
   const handleAddParagraph = () => {
-    if (currentParagraph.trim()) {
-      const newParagraph = {
-        id: crypto.randomUUID(),
-        content: currentParagraph
-      };
-      setParagraphs([...paragraphs, newParagraph]);
-      setCurrentParagraph('');
+    if (!currentParagraph.trim()) {
+      toast.error('O parágrafo não pode estar vazio!', {
+        position: "top-right",
+        style: {
+          background: '#fff0f0',
+          borderRadius: '10px',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          color: '#333'
+        }
+      });
+      return;
     }
+
+    const newParagraph = {
+      id: crypto.randomUUID(),
+      content: currentParagraph
+    };
+    setParagraphs([...paragraphs, newParagraph]);
+    setCurrentParagraph('');
+    toast.success('✍️ Parágrafo adicionado!', {
+      position: "top-right",
+      style: {
+        background: '#f0f9ff',
+        borderRadius: '10px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        color: '#333'
+      }
+    });
   };
 
   const handleSaveDraft = () => {
